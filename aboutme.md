@@ -4,10 +4,12 @@ title: About me
 subtitle: Reasons to preemptively give me a Masters degree
 ---
 
-Just look at this great website. I made this. Is there really more work you expect me to do?
+Just look at this great website. I made this!
 
 
-### What will with a Master's degree in Program Evaluation & Data Analytics?
+## What will I do with a Master's?
 
-Force everyone to refer to me as Master.
+ - Get a job
+ - Force everyone to refer to me as "Master Jaesa"
+ - That's it, that's all I got
 
