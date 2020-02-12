@@ -1,16 +1,13 @@
 ---
 layout: page
 title: About me
-subtitle: Why you'd want to go on a date with me
+subtitle: Reasons to preemptively give me a Masters degree
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+Just look at this great website. I made this. Is there really more work you expect me to do?
 
-- I rock a great mustache
-- I'm extremely loyal to my family
 
-What else do you need?
+### What will with a Master's degree in Program Evaluation & Data Analytics?
 
-### my history
+Force everyone to refer to me as Master.
 
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](http://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
