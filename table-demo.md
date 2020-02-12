@@ -1,5 +1,5 @@
 ---
-layout: Liquid-table
+layout: liquid-table
 title: 'amiright?'
 reynolds:
   strengths:
