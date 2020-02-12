@@ -21,8 +21,4 @@ gosling:
   - not ryan reynolds
 ---
 
-![](img/ryan-v-ryan.jpg)  
-
-## Lorem Ipsum
-
-Lorem ipsum dolor sit amet....
+"http://JaesaR.github.io/img/ryan-v-ryan.jpg"
