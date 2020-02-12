@@ -1,7 +1,7 @@
 # --- General options --- #
 
 # Name of website
-title: Jaesa's Website
+title: "Jaesa's Website"
 
 # Short description of your site
 description: A virtual proof that I can copy and paste
@@ -79,9 +79,7 @@ share-links-active:
   twitter: true
   linkedin: true
 
-# How to display the link to the website in the footer
-# Remove this if you don't want a link in the footer
-url-pretty: "Jaesa.com"  # eg. "deanattali.com/beautiful-jekyll"
+
 
 # --- Web Statistics Section --- #
 
