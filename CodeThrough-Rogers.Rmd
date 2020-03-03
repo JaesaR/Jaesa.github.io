@@ -1,0 +1,92 @@
+---
+title: 'CodeThrough-Rogers'
+Author: Jaesa Rogers
+output: html_document
+theme: cosmo
+---
+
+**Today, we will be taking a look at all of the films in which pass the Bechdel Test. The Bechdel Test is a test that can be applied to any movie/book/tv show/etc. The story passes the test if there is at least one conversation between two women where a man is never mentioned. I found a database that tracks every single film that passes the Bechdel Test, and we will be using it to test my hypothesis: Movies that pass the Bechdel Test are probably woman oriented movies.**
+
+***Step 1***
+
+**First, let's begin by installing the jsonlite package. We need to use this package since our data is in json format, and it is needed to download the dataset. The data was sourced from data.world.**
+
+
+
+```{r}
+library(dplyr)
+library(jsonlite)
+df <- fromJSON("https://query.data.world/s/mcbhnhe2rbfq6zm5bvpzbqdlnfxxuk")
+```
+
+**Let's preview the dataset to make sure it's working.**
+
+```{r}
+colnames(df)
+```
+
+
+***Step 2***
+
+**Let's use the grep() function to search for the word "woman" in the movie titles and descriptions. This might help us tell if the movies are woman-oriented.**
+
+
+```{r}
+grep( pattern="woman", x=df$title, value=TRUE, ignore.case=TRUE ) %>% head()
+```
+
+```{r}
+grep( pattern="woman", x=df$description, value=TRUE, ignore.case=TRUE ) %>% head()
+```
+
+**Surprisingly, we can see that only a few of the titles include the word "woman" and none of the descriptions do. I wonder what the most common title word is? Let's find out.**
+
+***Step 3***
+
+**Load quanteda in order to use the corp function. This will help us be able to look for the top used word within the title of all movies that pass the Bechdel Test. (At least, the ones in this database.)**
+```{r}
+library( quanteda )
+```
+
+**Let's make the data easier to read.**
+```{r}
+# convert titles to all lower-case 
+df$title <- tolower( df$title )
+
+# use a sample for demo purposes
+
+corp <- corpus( df,  text_field="title" )
+corp
+```
+
+```{r}
+# remove punctuation 
+tokens <- tokens( corp, what="word", remove_punct=TRUE )
+head( tokens )
+```
+```{r}
+# remove filler words like the, and, a, to
+tokens <- tokens_remove( tokens, c( stopwords("english"), "nbsp" ), padding=F )
+```
+
+**Now that we have cleaned up our data, lets look for the most frequently occuring words.**
+```{r}
+# find frequently co-occuring words (typically compound words)
+ngram2 <- tokens_ngrams( tokens, n=2 ) %>% dfm()
+ngram2 %>% textstat_frequency %>% head()
+```
+
+```{r}
+# tabulate top word counts
+tokens %>% dfm( stem=F ) %>% topfeatures( )
+```
+
+**It looks like we didn't properly filter out the apostrophe's, because they are skewing our data with represented as "#39". We can see this using the grep() function.** 
+```{r}
+grep( pattern="#39", x=df$title, value=TRUE, ignore.case=TRUE ) %>% head()
+```
+
+**The Top Word Count is also a little off, because it is counting the single "s" after apostrophes as a word in the movie titles. Rather than go back through and filter for all of these nuances, I am going to submit this assignment because it's due in several hours and I am still having trouble with the R Package assignment :)**
+
+***Conclusion***
+**We can conclude that my hypothesis at the beginning were incorrect, there was very little coorelation between movies being about women and the Bechdel test. In fact the top series chains that pass the Bechdel Test are Star Trek and Star Wars, both of which are about women, men, and all sorts of in betweens in alien form. However, we can see that two of the top words in these titles ended up being things like "girl" and "love." Conversely, those words both occured less frequently than "dead."**
