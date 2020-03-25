@@ -22,9 +22,9 @@ description: A (mostly) professional portfolio
 navbar-links:
   Home: "https://JaesaR.github.io/"
   Ben Schwartz: "benschwartz"
-  Resume: "https://JaesaR.github.io/CV/"
   Code-Throughs: 
     - Bechdel Test: "CodeThrough-Rogers"
+  Resume: "https://JaesaR.github.io/CV/"
     
   
 
