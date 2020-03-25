@@ -20,7 +20,12 @@ description: A (mostly) professional portfolio
 
 # List of links in the navigation bar
 navbar-links:
+  Home: "https://JaesaR.github.io/"
   Ben Schwartz: "benschwartz"
+  Resume: "https://JaesaR.github.io/CV/"
+  Code-Throughs: 
+    - Bechdel Test: "CodeThrough-Rogers"
+    
   
 
 # Image to show in the navigation bar - image must be a square (width = height)
